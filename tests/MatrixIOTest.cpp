@@ -27,7 +27,7 @@ BOOST_AUTO_TEST_CASE(OpenData)
 
   MatrixXd resultMatrix = matrixIO::openData(testFileName, size);
 
-  BOOST_TEST(resultMatrix.isApprox(expectedMatrix));
+  BOOST_TEST(resultMatrix.isApprox(expectedMatrix, 1e-12));
 
   std::remove(testFileName.c_str());
 }
